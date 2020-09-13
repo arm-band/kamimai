@@ -1,0 +1,8 @@
+commons:
+    sitename: 紙舞
+    description: markdown-pdfを自動実行し、pdfのプレビューを表示するボイラープレート
+    year: 2018
+    author: アルム＝バンド
+param:
+    src: ./src/md/
+    dist: ./dist/pdf/

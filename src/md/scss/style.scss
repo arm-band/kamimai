@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+@import "./assets/css/yakuhanjp";
+@import "./assets/css/yakuhanmp";
+@import "./assets/css/yakuhanrp";
+
+/* 游ゴシック指定 */
+/* 参考: 游ゴシックをWindows版Chromeでキレイに表示する@font-faceの設定 - Qiita https://qiita.com/unagi-man/items/f309ffc0c661ef81c4e7 */
+@font-face {
+    font-family: "Custom Yu Gothic";
+    src: local("Yu Gothic");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Custom Yu Gothic";
+    src: local("Yu Gothic");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Custom Yu Gothic";
+    src: local("Yu Gothic");
+    font-weight: bold;
+}
+
+/* markdown-pdf/css/pdf.css */
+body {
+    font-size: 0.625em;
+}
+/* customized css */
+p, li, span, td, th, h1, h2, h3, h4, h5, h6 {
+    font: {
+/*        family: YakuHanJP, YuGothic, "Custom Yu Gothic", "Yu Gothic", sans-serif; */
+        family: YakuHanMP, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGP明朝B", Georgia, メイリオ, Meiryo, serif;
+        feature-settings: "palt";
+    }
+}
+p, li, span, td, th {
+    font-size: 14px;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
+}
+th, td {
+    border: 1px solid #333;
+    padding: 2px 4px;
+}
+img {
+    max-width: 40%;
+}
+li em {
+    float: right;
+    font-style: normal;
+}
+/* list関連 */
+ul, li {
+    margin-top: 0;
+}
+ul, ol {
+    list-style-position: outside;
+}
+/* 引用 */
+blockquote {
+    border: 0;
+    margin: 0;
+    p {
+        border-left: 2px solid #ccc;
+        padding: 0.5rem 0 0.5rem 1rem;
+        font-style: oblique;
+    }
+}
+/* 中央寄せ・右寄せ */
+.b {
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+}
+/* 改ページ */
+.page-b {
+    page-break-before: always;
+}

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// ============================================== *
+//                                                *
+//  共通                                          *
+//                                                *
+// ============================================= */
+@import "common";
+
+.main {
+    &_header, .pdf_header {
+        @include mincho();
+    }
+    &_header {
+        padding: 0.5rem;
+        margin: 1rem 0 0.5rem;
+        border-bottom: 1px solid $main-color;
+    }
+    .pdf_header {
+        &Head {
+            margin-right: 0.5rem;
+            &:after {
+                content: ":";
+            }
+        }
+    }
+    .container {
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    @media (min-width: 768px) {
+        .pdfobject_container {
+            width: 80%;
+            max-width: 80%;
+        }
+    }
+    .pdfobject_container {
+        height: 40rem;
+    }
+}

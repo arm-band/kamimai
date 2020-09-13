@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// Import                                        *
+//                                               *
+// ============================================= */
+@import "../../node_modules/normalize.preprocessor/normalize.scss"; //normalize.css
+@import "util/var"; //変数
+@import "util/typo"; //ベンダープレフィックス等のMixinモジュール
+@import "util/module"; //ベンダープレフィックス等のMixinモジュール
+@import "util/base"; //フォント指定やIE対処など
+
+// ============================================= *
+//                                               *
+// 全体                                           *
+//                                               *
+// ============================================= */
+
+// ============================================= *
+//                                               *
+// ヘッダ                                         *
+//                                               *
+// ============================================= */
+.header {
+    position: fixed;
+}
+.navbar {
+    padding: 0.4rem 1rem;
+    width: calc(100vw - 2rem);
+    overflow: hidden;
+    background-color: $main-color;
+    box-shadow: 0 3px 3px rgba($color, 0.4);
+    position: relative; //box-shadowのために必要
+    display: flex;
+    align-items: center;
+    &_head {
+        margin: 0.5rem 0;
+        @include mincho();
+        color: $bg-color;
+        text-shadow: 2px 2px 2px rgba($color, 1);
+        a {
+            &, &:link, &:visited, &:hover, &:active, &:focus {
+                color: $bg-color;
+                text-decoration: none;
+            }
+        }
+    }
+    .navList {
+        margin-left: auto; //右寄せ
+        list-style: none outside;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 0.5rem;
+        &_item {
+            padding: 0 0.5rem;
+            a {
+                text-shadow: 1px 1px 1px rgba($color, 0.4);
+                &, &:link, &:visited {
+                    color: $bg-color;
+                    text-decoration: none;
+                }
+                &:hover, &:active, &:focus {
+                    color: $link-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// ============================================= *
+//                                               *
+// メインコンテンツ                                 *
+//                                               *
+// ============================================= */
+.main {
+    background-color: $bg-color;
+    color: $color;
+    padding: 0.5rem 1rem;
+    .cushion {
+        margin-top: $navbar-height;
+    }
+}
+
+// ============================================= *
+//                                               *
+// フッタ                                         *
+//                                               *
+// ============================================= */
+.footer {
+    clear: both;
+    padding: 0.5rem 1rem;
+    background-color: $main-color;
+    color: $bg-color;
+    .copyRight {
+        display: block;
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+// ============================================= *
+//                                               *
+// ページトップへ戻る                               *
+//                                               *
+// ============================================= */
+.returnPageTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
+    z-index: 90;
+    transform: rotate(45deg);
+    background-color: $main-color2;
+    border-radius: $rpt-size / 11;
+    @include transitionSet();
+    &:hover, &:active {
+        background-color: lighten($main-color2, 15%);
+    }
+    box-shadow: 3px 3px 3px rgba($color, 0.4);
+    span {
+        display: block;
+        font-size: $rpt-size / 2;
+        width: $rpt-size;
+        height: $rpt-size;
+        line-height: $rpt-size;
+        color: $bg-color;
+        text-align: center;
+        cursor: pointer;
+        transform: rotate(-45deg);
+        @include transitionSet();
+        &:hover, &:active {
+            color: $color;
+        }
+    }
+}
