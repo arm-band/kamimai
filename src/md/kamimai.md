@@ -38,6 +38,9 @@ Kamimai(紙舞)とは、昭和初期の民俗学者・藤沢衛彦の著書『�
 5. `npm start`で初期設定を行うと、`gulp`も実行されます。`browser-sync`により、既定のブラウザでページを表示します
     - 生成されたディレクトリ・ファイルは`npm run budayu`で削除できます
 
+<!-- 意図的な改ページ -->
+<div class="p-break"></div>
+
 ## 機能
 
 1. `markdown-pdf`により、下記`config.yml`の`param.src`に記述されたパスにある全てのMarkdownファイルを同ファイルの`param.dist`にPDFとして出力します。
@@ -49,7 +52,7 @@ Kamimai(紙舞)とは、昭和初期の民俗学者・藤沢衛彦の著書『�
 
 ### チェックリスト的なもの
 
-`src/md/scss/style.scss`で`em {float: right; }`としているので、□を`*□*`というように囲ってあげると、チェックリストとして使用できます(`munida.md`を参照)。
+`src/md/scss/style.scss`で`li em {float: right; }`としているので、□を`*□*`というように囲ってあげると、チェックリストとして使用できます(`munida.md`を参照)。
 
 
 ## 設定
@@ -68,8 +71,16 @@ Kamimai(紙舞)とは、昭和初期の民俗学者・藤沢衛彦の著書『�
                 - プロジェクトのルートディレクトリからの相対パスで記述。
                 - 初期状態では存在しないパスの場合、予めnpm scriptsなどで生成しておくこと
 
+<!-- 意図的な改ページ -->
+<div class="p-break"></div>
+
 ## リリースノート
 
+- 2021/1/6 ver0.14.3
+    - npmパッケージをアップデート
+    - `gulp-sass` のトランスパイラを `node-sass` から `sass`(Dart Sass) に切り替え
+    - `gulp-uglify` を廃止して `gulp-uglify-es` に切り替え
+    - markdown のスタイル調整
 - 2020/9/13 ver0.14.2
     - npmパッケージをアップデート
     - `gulp-notify`のnotify追加

@@ -5,7 +5,7 @@ module.exports = {
     yaml: require('yaml'),
     sass:  require('gulp-sass'),
     autoprefixer: require('gulp-autoprefixer'),
-    uglify: require('gulp-uglify'),
+    uglify: require('gulp-uglify-es').default,
     concat: require('gulp-concat'),
     rename: require('gulp-rename'),
     ejs: require('gulp-ejs'),
